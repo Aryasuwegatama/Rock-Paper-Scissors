@@ -1,0 +1,63 @@
+body {
+  background: rgb(64, 186, 200);
+  background: linear-gradient(
+    90deg,
+    rgba(64, 186, 200, 1) 20%,
+    rgba(48, 190, 162, 1) 80%
+  );
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  margin: 4rem 0rem;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 0.25rem;
+  word-spacing: 1rem;
+}
+.homepage-image {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+img {
+  height: 130px;
+  margin: 0rem 2rem;
+}
+p {
+  color: whitesmoke;
+  margin: 4rem 0rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* Button Start Play */
+button {
+  display: block;
+  text-align: center;
+  margin: 2rem auto;
+}
+.primary-btn {
+  cursor: pointer;
+  outline: 0;
+  display: block;
+  font-weight: 400;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: whitesmoke;
+  color: whitesmoke;
+  border: 0.2rem solid whitesmoke;
+  padding: 0.4rem 1.8rem;
+  font-size: 1.5rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+.primary-btn:hover {
+  color: #fff;
+  background-color: rgba(245, 245, 245, 0.4);
+  border-color: whitesmoke;
+  padding: 0.1 rem 1.8rem;
+  letter-spacing: 0.08rem;
+  transition: all 0.2s ease-out;
+}
