@@ -4,10 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/animation.css" />
+    <title>Rock Paper Scissors - Play with Computer</title>
   </head>
   <body>
-    <h1>testing</h1>
-    <script src="script.js"></script>
+    <h2 class="round">Round 1</h2>
+    <main class="playSection">
+      <section class="player">
+        <p class="title">Your Score</p>
+        <div class="starWrap">
+          <img src="/img/star-blank.png" alt="star" class="star" />
+          <img src="/img/star-blank.png" alt="star" class="star" />
+          <img src="/img/star-blank.png" alt="star" class="star" />
+        </div>
+        <p class="infoP"></p>
+        <div class="rpsIconWrap">
+          <img src="/img/rock.png" alt="Rock.RPSGame" class="rock" />
+          <img src="/img/paper.png" alt="Rock.RPSGame" class="paper" />
+          <img src="/img/scissors.png" alt="Rock.RPSGame" class="scissors" />
+        </div>
+        <p class="playerStatus">Take Your Pick</p>
+      </section>
+      <section class="computer">
+        <p class="title">Computer Score</p>
+        <div class="starWrap">
+          <img src="/img/star-blank.png" alt="star" class="star" />
+          <img src="/img/star-blank.png" alt="star" class="star" />
+          <img src="/img/star-blank.png" alt="star" class="star" />
+        </div>
+        <p class="infoC"></p>
+        <div class="computerAnimation">
+          <div class="imgContainer">
+            <img src="/img/rock.png" alt="Rock.RPSGame" class="rockCo" />
+          </div>
+          <div class="imgContainer">
+            <img src="/img/paper.png" alt="Paper.RPSGame" class="paperCo" />
+          </div>
+          <div class="imgContainer">
+            <img
+              src="/img/scissors.png"
+              alt="Scissors.RPSGame"
+              class="scissorsCo"
+            />
+          </div>
+          <!-- <img src="/img/rock.png" alt="Rock.RPSGame" class="rockCo" />
+          <img src="/img/paper.png" alt="Paper.RPSGame" class="paperCo" />
+          <img
+            src="/img/scissors.png"
+            alt="Scissors.RPSGame"
+            class="scissorsCo"
+          /> -->
+        </div>
+        <p class="computerStatus">Computer is Picking...</p>
+      </section>
+    </main>
+    <script src="/ScriptJS/script.js"></script>
   </body>
 </html>
