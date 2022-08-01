@@ -1,21 +1,12 @@
-/* Visual debug */
-/* main,
-section,
-div,
-img {
-  border: 2px dotted white;
-} */
-
 /* ======================== */
 body {
   background: rgb(64, 186, 200);
   background: linear-gradient(
     90deg,
-    rgba(64, 186, 200, 1) 30%,
-    rgba(48, 190, 162, 1) 70%
+    rgba(64, 186, 200, 1) 20%,
+    rgba(48, 190, 162, 1) 80%
   );
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: relative;
 }
 .homepage-title {
   margin: 4rem 0rem;
@@ -30,14 +21,15 @@ body {
   justify-content: center;
 }
 .homepage-image img {
-  height: 10rem;
+  height: 9rem;
   margin: 0rem 2rem;
 }
 .description {
   color: whitesmoke;
   margin: 4rem 0rem;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   text-align: center;
+  line-height: 2.5rem;
 }
 
 /* Button Start Play */
@@ -46,7 +38,9 @@ button {
   text-align: center;
   margin: 2rem auto;
 }
-.primary-btn {
+.primary-btn,
+#playAgain-btn,
+#homepage-btn {
   cursor: pointer;
   outline: 0;
   display: block;
@@ -62,7 +56,9 @@ button {
   text-transform: uppercase;
   transition: all 0.2s ease-in;
 }
-.primary-btn:hover {
+.primary-btn:hover,
+#playAgain-btn:hover,
+#homepage-btn:hover {
   color: #fff;
   background-color: rgba(245, 245, 245, 0.4);
   border-color: whitesmoke;
@@ -91,48 +87,52 @@ button {
   margin: 0.5rem 0rem;
   text-align: center;
 }
-.starWrap {
+.playerChoice {
   display: flex;
   justify-content: center;
-  height: 3rem;
+  height: 7.5rem;
+  margin: 3rem 0rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.5s ease-in;
+  border-radius: 0.5rem;
 }
-.rpsIconWrap {
+
+.playerChoice img:nth-child(1):hover,
+.playerChoice img:nth-child(2):hover,
+.playerChoice img:nth-child(3):hover,
+.playerChoice:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: all 0.5s ease-out;
+}
+.playerChoice img {
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* computer section */
+.computerChoice {
   display: flex;
   justify-content: center;
   height: 7.5rem;
   margin: 3rem 0rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: all 0.2s ease-in;
+  border-radius: 0.5rem;
 }
-.rpsIconWrap:hover,
-.rpsIconWrap:active {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: all 0.2s ease-out;
-}
-.rpsIconWrap img {
+.computerChoice img {
   padding: 1rem;
-}
-
-/* computer section */
-.computerAnimation {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  height: 7.5rem;
-  margin: 3rem 0rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.imgContainer img {
-  padding: 1rem 0rem;
-  height: 7.5rem;
+  opacity: 0;
 }
 
 /* double style*/
 .player,
 .computer {
   padding: 1rem;
+  width: 24.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  position: relative;
+  border-radius: 1rem;
 }
 .playerStatus,
 .computerStatus {
@@ -141,12 +141,83 @@ button {
   margin: 1.5rem 0rem;
   text-align: center;
 }
-.infoP,
-.infoC {
-  position: relative;
+.pInfo-container,
+.cInfo-container {
+  display: flex;
+  justify-content: center;
+}
+.pInfo,
+.cInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: whitesmoke;
-  height: 1.5rem;
-  font-size: 1.5rem;
+  height: 2rem;
+  width: 6rem;
+  font-size: 1.375rem;
   margin-top: 1rem;
-  text-align: center;
+  border: 0.1rem solid whitesmoke;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.p-StarWrap,
+.c-StarWrap {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+}
+
+/* ===== Display Result ======== */
+.resultDisplay,
+.finalInfoWinner,
+.container-display,
+.showTotalRound,
+.showFinalScore {
+  /* border: 2px dotted white; */
+  display: flex;
+  justify-content: center;
+}
+.resultDisplay {
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(64, 186, 200, 0.95);
+}
+.container-display {
+  display: block;
+  width: 40%;
+  height: 80%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: rgb(64, 186, 200);
+  background: linear-gradient(
+    182deg,
+    rgba(64, 186, 200, 1) 20%,
+    rgba(48, 190, 162, 1) 75%
+  );
+  border-radius: 1rem;
+}
+.showTotalRound {
+  color: whitesmoke;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+.finalInfoWinner {
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  color: whitesmoke;
+  margin-top: 1rem;
+}
+.showFinalScore {
+  color: whitesmoke;
+  margin: 3rem 0rem;
+  font-size: 7rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#playAgain-btn {
+  margin-top: 3rem;
 }
