@@ -1,43 +1,41 @@
 .rockCo {
-  height: 6rem;
   position: absolute;
+  height: 6rem;
+  top: 0.7rem;
   transform: scale(0, 0);
   opacity: 0;
-  animation: rock 1.5s linear 0s infinite;
+  animation: load 1.5s linear 0s infinite;
 }
 .paperCo {
-  height: 6rem;
   position: absolute;
+  height: 6rem;
+  top: 0.7rem;
   transform: scale(0, 0);
   opacity: 0;
-  animation: rock 1.5s linear 0.5s infinite;
+  animation: load 1.5s linear 0.5s infinite;
 }
 .scissorsCo {
-  height: 6rem;
   position: absolute;
+  height: 6rem;
+  top: 0.7rem;
   transform: scale(0, 0);
   opacity: 0;
-  animation: rock 1.5s linear 1s infinite;
+  animation: load 1.5s linear 1s infinite;
 }
-@keyframes rock {
+@keyframes load {
   20% {
     transform: scale(0.5, 0.5);
     opacity: 0.5;
-    margin-left: -7.5rem;
+    margin-left: -7rem;
   }
   40% {
     transform: scale(1.1, 1.1);
     opacity: 1;
-    margin-left: -4rem;
+    margin-left: 0rem;
   }
   60% {
     transform: scale(0.5, 0.5);
     opacity: 0.5;
-    margin-left: 0rem;
-  }
-  100% {
-    transform: scale(0, 0);
-    opacity: 0;
-    margin-left: -3rem;
+    margin-left: 6.5rem;
   }
 }
