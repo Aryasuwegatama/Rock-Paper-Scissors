@@ -11,7 +11,11 @@ const choiceNodeList = document.querySelectorAll('.playerChoice img'),
     scissors = document.querySelector('.scissors'),
     playerStatus = document.querySelector('.playerStatus'),
     computerStatus = document.querySelector('.computerStatus'),
-    comPick = document.getElementById('computerChoice');
+    comPick = document.getElementById('computerChoice'),
+    comPickContainer = document.getElementsByClassName('computerChoice')[0],
+    imgRock = document.createElement('img'),
+    imgPaper = document.createElement('img'),
+    imgScissors = document.createElement('img');
 // ================================
 // get Variable Global
 const choices = Array.from(choiceNodeList); /*convert choice (node list) to array*/
@@ -75,19 +79,21 @@ function gameRound(){
             playerStarIndicator();
             computerStarIndicator();
             pickStatus();
+            stopLoadAnim();
             getResetDefault();
             setTimeout(winCondition, 1000);
-
-            // debug
-            console.log('round = ' , round);
-            console.log('player pick = ' , playerPick);
-            console.log('computer pick = ' , computerPick);
-            console.log(playerInfo(), '|| score' ,playerScore)
-            console.log(computerInfo(), '|| score' ,computerScore)
-            console.log('--------------------------')
             round++
+
+            // // debug
+            // console.log('round = ' , round);
+            // console.log('player pick = ' , playerPick);
+            // console.log('computer pick = ' , computerPick);
+            // console.log(playerInfo(), '|| score' ,playerScore)
+            // console.log(computerInfo(), '|| score' ,computerScore)
+            // console.log('--------------------------')
         });
     });
+    loadingAnimation();
 };
 // ==============================
 // stop reset and freeze
@@ -109,6 +115,7 @@ function setResetDefault(){
     comPick.style.opacity = 0;
     playerStatus.innerHTML = 'Take Your Pick';
     computerStatus.innerHTML = 'de\'BOT is thinking...';
+    loadingAnimation();
 }
 // ==============================
 // computer generate choice
@@ -218,10 +225,10 @@ const sectionResult = document.createElement('section'),
     showScoreText = document.createTextNode(`${playerScore} : ${computerScore}`),
     playAgainText = document.createTextNode(`PLAY AGAIN`),
     homepageText = document.createTextNode(`HOME PAGE`);
-// inserting Text needed to display
-h2FinalRound.appendChild(showRoundText);
-h2FinalInfo.appendChild(showInfoText);
-h2FinalScore.appendChild(showScoreText);
+    // inserting Text needed to display
+    h2FinalRound.appendChild(showRoundText);
+    h2FinalInfo.appendChild(showInfoText);
+    h2FinalScore.appendChild(showScoreText);
 btnPlayAgain.appendChild(playAgainText);
 btnHomepage.appendChild(homepageText);
 
@@ -248,5 +255,26 @@ document.body.appendChild(sectionResult);
 document.body.insertBefore(sectionResult, (document.body.children[3]));
 }
 // /////////////////
+// ================================
+// make loading animation
+function loadingAnimation() {
+    // create attributes
+    imgRock.setAttribute('src', '/img/rock.png');
+    imgPaper.setAttribute('src', '/img/paper.png');
+    imgScissors.setAttribute('src', '/img/scissors.png');
+    imgRock.setAttribute('class', 'rockCo');
+    imgPaper.setAttribute('class', 'paperCo');
+    imgScissors.setAttribute('class', 'scissorsCo');
+    // append the attributes to elements
+    comPickContainer.appendChild(imgRock);
+    comPickContainer.appendChild(imgPaper);
+    comPickContainer.appendChild(imgScissors);
+}
+function stopLoadAnim() {
+    imgRock.removeAttribute('src')
+    imgPaper.removeAttribute('src')
+    imgScissors.removeAttribute('src')
+}
+
 // ================================
 gameRound();
