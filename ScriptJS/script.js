@@ -125,7 +125,7 @@ function getComputerPick() {
 // ==============================
 // displaying computer option
 function comShowPick(){
-    comPick.setAttribute(`src`, `/img/${computerPick}.png`);
+    comPick.setAttribute(`src`, `../img/${computerPick}.png`);
     comPick.setAttribute(`alt`, `${computerPick}.RSPGame`);
     comPick.style.opacity = 1;
     comPick.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
@@ -178,16 +178,16 @@ function getComputerScore(){
 //player star indicator for score
 function playerStarIndicator(){
     if(playerScore == 1){
-        playerStar[0].setAttribute(`src`,`/img/star-gold.png`)
+        playerStar[0].setAttribute(`src`,`../img/star-gold.png`)
     }
     else if (playerScore == 2){
         for (let i = 0; i < (playerStar.length)-1; i++) {
-            playerStar[i].setAttribute(`src`,`/img/star-gold.png`)
+            playerStar[i].setAttribute(`src`,`../img/star-gold.png`)
         }
     }
     else if (playerScore == 3){
         for (let i = 0; i < playerStar.length; i++) {
-            playerStar[i].setAttribute(`src`,`/img/star-gold.png`)
+            playerStar[i].setAttribute(`src`,`../img/star-gold.png`)
         }
     }
 } 
@@ -195,16 +195,16 @@ function playerStarIndicator(){
 //computer star indicator for score
 function computerStarIndicator(){
     if(computerScore == 1){
-        computerStar[0].setAttribute(`src`,`/img/star-gold.png`)
+        computerStar[0].setAttribute(`src`,`../img/star-gold.png`)
     }
     else if (computerScore == 2){
         for (let i = 0; i < (computerStar.length)-1; i++) {
-            computerStar[i].setAttribute(`src`,`/img/star-gold.png`)
+            computerStar[i].setAttribute(`src`,`../img/star-gold.png`)
         }
     }
     else if (computerScore == 3){
         for (let i = 0; i < computerStar.length; i++) {
-            computerStar[i].setAttribute(`src`,`/img/star-gold.png`)
+            computerStar[i].setAttribute(`src`,`../img/star-gold.png`)
         }
     }
 } 
@@ -242,7 +242,7 @@ h2FinalScore.setAttribute('class', 'showFinalScore');
 btnPlayAgain.setAttribute('id', 'playAgain-btn');
 btnPlayAgain.setAttribute('onclick', 'window.location.reload(true)');
 btnHomepage.setAttribute('id', 'homepage-btn');
-btnHomepage.setAttribute('onclick', 'window.location.href="/"');
+btnHomepage.setAttribute('onclick', 'window.location.href="../index.html"');
 
 // structuring html element
 divContainer.appendChild(h2FinalRound);
@@ -259,9 +259,9 @@ document.body.insertBefore(sectionResult, (document.body.children[3]));
 // make loading animation
 function loadingAnimation() {
     // create attributes
-    imgRock.setAttribute('src', '/img/rock.png');
-    imgPaper.setAttribute('src', '/img/paper.png');
-    imgScissors.setAttribute('src', '/img/scissors.png');
+    imgRock.setAttribute('src', '../img/rock.png');
+    imgPaper.setAttribute('src', '../img/paper.png');
+    imgScissors.setAttribute('src', '../img/scissors.png');
     imgRock.setAttribute('class', 'rockCo');
     imgPaper.setAttribute('class', 'paperCo');
     imgScissors.setAttribute('class', 'scissorsCo');
